@@ -46,7 +46,7 @@ class Block {
 class Blockchain {
 
     constructor() {
-        // genesis block will be created when first time a block is inserted
+        // genesis block will be created when the first block is inserted
     }
 
     async _createGenesisBlock() {
@@ -63,9 +63,7 @@ class Blockchain {
 
     _saveBlock(block) {
         return sandbox.addLevelDBData(block.height, JSON.stringify(block))
-            .then(res => {
-                return res;
-            }).catch(err => {
+            .catch(err => {
                 console.error('_saveBlock::error', err);
             });
     }
@@ -82,7 +80,8 @@ class Blockchain {
         newBlock.height = latestBlock.height + 1;
         newBlock.time = new Date().getTime().toString().slice(0, -3);
         newBlock.hash = this._getHashOf(newBlock);
-        return this._saveBlock(newBlock);
+        await this._saveBlock(newBlock);
+        return newBlock;
     }
 
     async getChain() {
@@ -97,7 +96,7 @@ class Blockchain {
     }
 
     async getLatestBlock() {
-        const numberOfBlocks = await sandbox.getBlocksCount();        
+        const numberOfBlocks = await this.getBlockHeight();        
         return numberOfBlocks > 0 ? this.getBlock(numberOfBlocks - 1) : null;
     }
 

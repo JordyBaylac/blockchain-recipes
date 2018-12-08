@@ -13,7 +13,7 @@ function printChain(myBlockChain) {
     myBlockChain.getChain()
         .then(chain => {
             console.log('-------------------');
-            console.log('       Chain');
+            console.log('       Chain       ');
             console.log('-------------------');
             console.log(chain);
             return myBlockChain.validateChain();
@@ -31,8 +31,8 @@ function printChain(myBlockChain) {
 function createBulkBlocks(myBlockChain) {
     return new Promise(async(resolve, _) => {
         
-        const height = await myBlockChain.getBlockHeight() || 1; //perhaps the genesis doesn\t exist yet
-        const nextTen = height+10;
+        const currentHeight = await myBlockChain.getBlockHeight() || 1; //perhaps the genesis doesn't exist yet
+        const nextTen = currentHeight+10;
 
         (function theLoop(i) {
             setTimeout(function () {
@@ -45,6 +45,6 @@ function createBulkBlocks(myBlockChain) {
                         resolve();
                 });
             }, 0);
-        })(height-1);
+        })(currentHeight-1);
     })
 }
