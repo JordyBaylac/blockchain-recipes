@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "181f3869-ebe9-4c67-94d5-dfbae581e25c",
+		"name": "blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getByHeight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/block/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"block",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBlock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"body\": \"Testing block with test string data\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/block",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"block"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
