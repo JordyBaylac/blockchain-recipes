@@ -10,14 +10,14 @@ A basic REST API using **express**. The API exposes a private blockchain.
 
 Application is composed by:
 
-- *app/controllers/*: Block controller exposing method for retrieving and creating blocks.
-- *app/domain*: Block and Blockchain entities.
+- *app/controllers*: Block controller exposing method for retrieving and creating blocks.
+- *app/domain*: Block and Blockchain entities definition.
 - *app/presistence*: LevelDB wrapper for key-value storage of the blockchain.
 - *app/app.js*: REST API definition and entry point of the application.
 
 ## Deployment instructions
 
-To start, install package, run node application and then access the API on *localhost:8000/block*
+To start, install dependencies, run node application and then access the API on *localhost:8000/block*
 
 ```sh
 npm install
@@ -29,6 +29,6 @@ npm start
 ## API endpoints
 
 - **GET**: ```localhost:8000/block/{blockHeight}``` Get existing Block
-- **POST**: ```localhost:8000/block/``` Create a new Block
+- **POST**: ```localhost:8000/block``` Create a new Block
 
 Check **blockchain.postman_collection.json** file for testing the API with Postman.
