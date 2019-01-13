@@ -1,12 +1,11 @@
 # Blockchain Notary Service
 
-REST API exposing a Star Notary Service. The API exposes uses private blockchain.
+REST API exposing a Star Notary Service. The API uses private blockchain and:
 
-* The API allow users to submit a validation request.
-* The API allow users to validate the request.
-* The API be able to encode and decode the star data.
-* The API allow be able to submit the Star data.
-* The API allow lookup of Stars by hash, wallet address, and height.
+* allow users to submit a validation request.
+* allow users to validate the request.
+* allow users to submit the Star data.
+* allow lookup of Stars by hash, wallet address, and height.
 
 ## Tech dependencies
 
