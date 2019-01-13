@@ -37,7 +37,7 @@ npm start
 * **POST**: ```localhost:8000/message-signature/validate``` Validating signature
 * **POST**: ```localhost:8000/block``` Submitting a star (after signature has been verified)
 * **GET**: ```localhost:8000/stars/hash:[HASH]``` Get star by block hash
-* **GET**: ```localhost:8000/stars/address:[HASH]``` Get stars by wallet address
+* **GET**: ```localhost:8000/stars/address:[ADDRESS]``` Get stars by wallet address
 * **GET**: ```localhost:8000/block/[HEIGHT]``` Get star by block height
 
 Check **blockchain-recipes.postman_collection** file for testing the API with Postman.
