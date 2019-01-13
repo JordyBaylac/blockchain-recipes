@@ -1,0 +1,46 @@
+# Blockchain Notary Service
+
+REST API exposing a Star Notary Service. The API exposes uses private blockchain.
+
+* The API allow users to submit a validation request.
+* The API allow users to validate the request.
+* The API be able to encode and decode the star data.
+* The API allow be able to submit the Star data.
+* The API allow lookup of Stars by hash, wallet address, and height.
+
+## Tech dependencies
+
+* **express**, REST web framework used for exposing the API.
+* **levelDB** for storing and loading the chain.
+* **crypto-js** for hashing blocks.
+* **hex2ascii** for decoding star content.
+* **bitcoinjs-lib** and **bitcoinjs-message** for signature verification.
+
+Application is composed by:
+
+* *app/controllers*: Validation and Star controllers exposing basic methods for validating, storing and searching stars.
+* *app/domain*: Block, Blockchain and Mempool definition.
+* *app/presistence*: LevelDB wrapper for key-value storage of the blockchain.
+* *app/app.js*: REST API definition and entry point of the application.
+
+## Deployment instructions
+
+To start, install dependencies, run node application and then access the API on *localhost:8000/block*
+
+```sh
+npm install
+npm start
+```
+
+    Note: For testing purposes, the blockchain is started with 10 blocks beside the genesis block.  
+
+## API endpoints
+
+* **POST**: ```localhost:8000/requestValidation``` Requesting validation
+* **POST**: ```localhost:8000/message-signature/validate``` Validating signature
+* **POST**: ```localhost:8000/block``` Submitting a star (after signature has been verified)
+* **GET**: ```localhost:8000/stars/hash:[HASH]``` Get star by block hash
+* **GET**: ```localhost:8000/stars/address:[HASH]``` Get stars by wallet address
+* **GET**: ```localhost:8000/block/[HEIGHT]``` Get star by block height
+
+Check **blockchain-recipes.postman_collection** file for testing the API with Postman.

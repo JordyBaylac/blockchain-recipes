@@ -60,7 +60,7 @@ class StarController {
                 res.status(200).json(starBlock);
             } catch (err) {
                 res.status(417).json({
-                    message: `Error creating block`,
+                    message: `Error creating star block`,
                     description: err.message || err
                 })
             }
@@ -72,7 +72,7 @@ class StarController {
             // checking that hash was provided
             if (!req.params.hash) {
                 res.status(417).json({
-                    message: 'Error searching a star',
+                    message: 'Error searching star',
                     description: 'Hash need to be provided'
                 });
                 return;
@@ -87,7 +87,7 @@ class StarController {
                 res.status(200).json(this._decodedStarStory(block));
             } catch (err) {
                 res.status(417).json({
-                    message: `Error searching block`,
+                    message: `Error searching star`,
                     description: err.message || err
                 })
             }
@@ -100,7 +100,7 @@ class StarController {
             // checking that wallet address was provided
             if (!req.params.address) {
                 res.status(417).json({
-                    message: 'Error searching a star',
+                    message: 'Error searching stars',
                     description: 'Wallet address need to be provided'
                 });
                 return;
@@ -116,7 +116,7 @@ class StarController {
                 res.status(200).json(blockResult);
             } catch (err) {
                 res.status(417).json({
-                    message: `Error searching block`,
+                    message: `Error searching stars`,
                     description: err.message || err
                 })
             }
@@ -129,7 +129,7 @@ class StarController {
             // checking that block height was provided
             if (!req.params.height) {
                 res.status(417).json({
-                    message: 'Error searching a star',
+                    message: 'Error searching stars',
                     description: 'Block height need to be provided'
                 });
                 return;
@@ -144,7 +144,7 @@ class StarController {
                 res.status(200).json(this._decodedStarStory(block));
             } catch (err) {
                 res.status(417).json({
-                    message: `Error searching block`,
+                    message: `Error searching stars`,
                     description: err.message || err
                 })
             }

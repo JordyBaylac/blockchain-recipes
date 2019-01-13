@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "181f3869-ebe9-4c67-94d5-dfbae581e25c",
+		"name": "blockchain-recipes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NotaryService",
+			"item": [
+				{
+					"name": "validation - requestValidation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/requestValidation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"requestValidation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation - requestValidation (OK #1)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/requestValidation",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"requestValidation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b4-m9t+SqM+mH8q12Mc5+0okduAqpU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 05:41:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"walletAddress\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"requestTimeStamp\": \"1547098866\",\n    \"message\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY:1547098866:starRegistry\",\n    \"validationWindow\": 300\n}"
+						}
+					]
+				},
+				{
+					"name": "validation - validateSignature",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"signature\": \"IBk+SBWmK3khbs8Pf6MyBR1CF3TcN5gVUlQgmjT/NtsHPcZ7LbutQiPeyI/IOBPZr3LDjb6QpJ7m1y3xNh+8WJU=\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/message-signature/validate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"message-signature",
+								"validate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation - validateSignature (OK #1)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"signature\": \"ILuYoUGLP3HZKUmKjSjBxzV8tiNEb8RnNQrM8DjkeaCQHHKMvvi8m29pk7i4psXYX2cjgShY0dqlYlmXXY0zV0A=\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/message-signature/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"message-signature",
+										"validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"eb-a07crIiCPrce7o5z21SzLhWOs/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 05:41:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"registerStar\": true,\n    \"status\": {\n        \"walletAddress\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n        \"requestTimeStamp\": \"1547098866\",\n        \"message\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY:1547098866:starRegistry\",\n        \"validationWindow\": 280,\n        \"messageSignature\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "submit star",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"star\": {\n        \"dec\": \"68° 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"Found star using https://www.google.com/sky/\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/block",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"block"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation - validateSignature (OK #1)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"signature\": \"ILuYoUGLP3HZKUmKjSjBxzV8tiNEb8RnNQrM8DjkeaCQHHKMvvi8m29pk7i4psXYX2cjgShY0dqlYlmXXY0zV0A=\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/message-signature/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"message-signature",
+										"validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"eb-a07crIiCPrce7o5z21SzLhWOs/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 05:41:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"registerStar\": true,\n    \"status\": {\n        \"walletAddress\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n        \"requestTimeStamp\": \"1547098866\",\n        \"message\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY:1547098866:starRegistry\",\n        \"validationWindow\": 280,\n        \"messageSignature\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get star by block hash",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"star\": {\n        \"dec\": \"68° 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"Found star using https://www.google.com/sky/\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/stars/hash:4500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"stars",
+								"hash:4500"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation - validateSignature (OK #1)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"signature\": \"ILuYoUGLP3HZKUmKjSjBxzV8tiNEb8RnNQrM8DjkeaCQHHKMvvi8m29pk7i4psXYX2cjgShY0dqlYlmXXY0zV0A=\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/message-signature/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"message-signature",
+										"validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"eb-a07crIiCPrce7o5z21SzLhWOs/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 05:41:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"registerStar\": true,\n    \"status\": {\n        \"walletAddress\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n        \"requestTimeStamp\": \"1547098866\",\n        \"message\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY:1547098866:starRegistry\",\n        \"validationWindow\": 280,\n        \"messageSignature\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get stars by wallet address",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"star\": {\n        \"dec\": \"68° 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"Found star using https://www.google.com/sky/\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/stars/address:1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"stars",
+								"address:1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation - validateSignature (OK #1)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"signature\": \"ILuYoUGLP3HZKUmKjSjBxzV8tiNEb8RnNQrM8DjkeaCQHHKMvvi8m29pk7i4psXYX2cjgShY0dqlYlmXXY0zV0A=\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/message-signature/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"message-signature",
+										"validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"eb-a07crIiCPrce7o5z21SzLhWOs/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 05:41:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"registerStar\": true,\n    \"status\": {\n        \"walletAddress\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n        \"requestTimeStamp\": \"1547098866\",\n        \"message\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY:1547098866:starRegistry\",\n        \"validationWindow\": 280,\n        \"messageSignature\": true\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get star by block height",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"star\": {\n        \"dec\": \"68° 52' 56.9\",\n        \"ra\": \"16h 29m 1.0s\",\n        \"story\": \"Found star using https://www.google.com/sky/\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/block/52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"block",
+								"52"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "validation - validateSignature (OK #1)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"address\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n    \"signature\": \"ILuYoUGLP3HZKUmKjSjBxzV8tiNEb8RnNQrM8DjkeaCQHHKMvvi8m29pk7i4psXYX2cjgShY0dqlYlmXXY0zV0A=\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/message-signature/validate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"message-signature",
+										"validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "235"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"eb-a07crIiCPrce7o5z21SzLhWOs/4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Jan 2019 05:41:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"registerStar\": true,\n    \"status\": {\n        \"walletAddress\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY\",\n        \"requestTimeStamp\": \"1547098866\",\n        \"message\": \"1GoUQvQJGSLDNvWmm8Zhs8EhYvAn6TEbrY:1547098866:starRegistry\",\n        \"validationWindow\": 280,\n        \"messageSignature\": true\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "0464f2a0-7ded-42e7-9ce1-296e4f8439a0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "29265947-ea73-4f98-8402-56f36ab950b8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
