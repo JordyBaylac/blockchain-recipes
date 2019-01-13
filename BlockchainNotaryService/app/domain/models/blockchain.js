@@ -77,6 +77,16 @@ class Blockchain {
         return new Block().copyFromStringified(data);
     }
 
+    async getBlockByHash(blockHash) {
+        const chain = await this.getChain();
+        return chain.find((block) => block.hash === blockHash);
+    }
+
+    async getBlocksByWallet(walletAddress) {
+        const chain = await this.getChain();
+        return chain.filter((block) => block.body.address === walletAddress);
+    }
+
     async validateBlock(blockHeight) {
         const block = await this.getBlock(blockHeight);
         const unhashedBlock = this._getBlockWithoutHash(block);

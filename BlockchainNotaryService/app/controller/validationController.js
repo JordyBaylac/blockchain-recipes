@@ -63,15 +63,15 @@ class ValidationController {
                 return;
             }
 
-            const valid = verifyMessage(requestValidation.message, address, signature)
-            if (valid)
+            const isValid = verifyMessage(requestValidation.message, address, signature)
+            if (isValid)
                 mempool.storeValidRequest(address);
 
             res.status(200).json({
-                registerStar: valid,
+                registerStar: isValid,
                 status: {
                     ...requestValidation,
-                    messageSignature: valid
+                    messageSignature: isValid
                 }
             });
         });
