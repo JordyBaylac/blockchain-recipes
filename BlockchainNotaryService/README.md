@@ -31,8 +31,6 @@ npm install
 npm start
 ```
 
-    Note: For testing purposes, the blockchain is started with 10 blocks beside the genesis block.  
-
 ## API endpoints
 
 * **POST**: ```localhost:8000/requestValidation``` Requesting validation
