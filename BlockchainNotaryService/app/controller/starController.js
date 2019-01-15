@@ -38,10 +38,10 @@ class StarController {
             if (!mempool.hasValidRequest(req.body.address)) {
                 res.status(401).json({
                     message: 'Error submitting star',
-                    description: `Address ${req.body.address} has not been validated`
+                    description: `Address ${req.body.address} does not have permission to submit a star`
                 });
                 return;
-            }
+            }                        
 
             // creating block model
             let block = new Block({
@@ -57,6 +57,10 @@ class StarController {
 
             try {
                 const starBlock = await this.blockchain.addBlock(block);
+                
+                //with this, we avoid the user to submit multiple star
+                mempool.markValidRequestAsUsed(req.body.address);  
+                              
                 res.status(200).json(starBlock);
             } catch (err) {
                 res.status(417).json({

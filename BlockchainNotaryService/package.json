@@ -5,8 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "npx ndb app/app.js"
+  }, 
   "author": "Jordy Baylac",
   "license": "ISC",
   "dependencies": {
@@ -17,5 +18,9 @@
     "express-json": "^1.0.0",
     "hex2ascii": "0.0.3",
     "level": "^4.0.0"
+  },
+  "devDependencies": {
+    "ndb": "^1.0.42",
+    "nodemon": "^1.18.9"
   }
 }

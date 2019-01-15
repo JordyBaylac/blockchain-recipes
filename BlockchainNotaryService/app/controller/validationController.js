@@ -18,7 +18,7 @@ class ValidationController {
      */
     requestValidation() {
         this.app.post("/requestValidation", (req, res) => {
-
+            console.log("injected amazing");
             // checking that address was provided
             if (!req.body || !req.body.address) {
                 res.status(417).json({
@@ -27,7 +27,6 @@ class ValidationController {
                 });
                 return;
             }
-
             const validationInfo = mempool.storeValidation(req.body.address);
             res.status(200).json(validationInfo);
         });
@@ -45,7 +44,7 @@ class ValidationController {
 
             // checking that address and signature were provided
             if (!req.body || !req.body.address || !req.body.signature) {
-                res.status(417).json({
+                res.status(417).json({ 
                     message: 'Error validating signature',
                     description: 'Message validation needs an address and a signature as input'
                 });

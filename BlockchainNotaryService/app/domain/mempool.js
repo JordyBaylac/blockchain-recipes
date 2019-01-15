@@ -47,6 +47,12 @@ class Mempool {
         return this.validRequestsPool[walletAddress] != null;
     }
 
+    markValidRequestAsUsed(walletAddress) {
+        if (this.validRequestsPool[walletAddress] != null) {
+            delete this.validRequestsPool[walletAddress];
+        }
+    }
+
     _addTimerForDeletion(walletAddress) {
         let self = this;
         let timeout = setTimeout(() => {
@@ -58,13 +64,10 @@ class Mempool {
     _removeTimer(walletAddress) {
         let timer = this.deletionTimers[walletAddress];
         if (timer) {
-            console.log("deleting timer")
             clearTimeout(timer);
             delete this.deletionTimers[walletAddress];
             delete this.validationsPool[walletAddress];
-        } else {
-            console.log("imposible delete timer")
-        }
+        } 
     }
 }
 
